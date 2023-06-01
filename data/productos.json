@@ -50,5 +50,49 @@
     "stock": "1",
     "category": "Categoria html",
     "thumbnails": "Sin imagen"
+  },
+  {
+    "id": "pid2628",
+    "title": "e",
+    "description": "er",
+    "code": "ee",
+    "price": "3",
+    "status": true,
+    "stock": "3",
+    "category": "wer",
+    "thumbnail": "Sin imagen"
+  },
+  {
+    "id": "pid93a4",
+    "title": "e",
+    "description": "r",
+    "code": "er",
+    "price": "4",
+    "status": true,
+    "stock": "4",
+    "category": "fds",
+    "thumbnail": "Sin imagen"
+  },
+  {
+    "id": "pid9275",
+    "title": "f",
+    "description": "fsf",
+    "code": "sf",
+    "price": "33",
+    "status": true,
+    "stock": "2",
+    "category": "333333",
+    "thumbnail": "/img/1685646687519-357603822-GitHub_cambio de nombre-svg-por conflicto.jpg"
+  },
+  {
+    "id": "pid54ed",
+    "title": "testingf",
+    "description": "test",
+    "code": "1asdf6+aef41",
+    "price": "1",
+    "status": true,
+    "stock": "15",
+    "category": "12",
+    "thumbnail": "/img/1685646939019-625243909-GitHub_cambio de nombre-svg-por conflicto.jpg"
   }
 ]
