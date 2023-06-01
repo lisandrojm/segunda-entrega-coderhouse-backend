@@ -1,0 +1,21 @@
+{
+  "name": "entrega-del-proyecto-final---primera-entrega",
+  "version": "1.0.0",
+  "description": "Prmera entrega del proyecto final del curso de backend de Coderhouse",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js"
+  },
+  "author": "Lisandro Martínez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

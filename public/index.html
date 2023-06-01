@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Agrega los enlaces a los estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 mt-3">
+          <h1 class="text-center">Formulario</h1>
+
+          <form id="productForm" action="/api/products" method="POST" enctype="multipart/form-data" class="bg-light p-4 rounded">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="title">Título:</label>
+                <input type="text" class="form-control" id="title" name="title" required />
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="code">Código:</label>
+                <input type="text" class="form-control" id="code" name="code" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Descripción:</label>
+              <textarea class="form-control" id="description" name="description" required></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="price">Precio:</label>
+                <input type="number" class="form-control" id="price" name="price" step="0.01" required />
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="stock">Stock:</label>
+                <input type="number" class="form-control" id="stock" name="stock" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="category">Categoría:</label>
+              <input type="text" class="form-control" id="category" name="category" required />
+            </div>
+
+            <div class="form-group">
+              <label for="thumbnails">Miniaturas:</label>
+              <input type="file" class="form-control-file" id="file" name="file" />
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-lg">Agregar producto</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agrega los scripts de Bootstrap al final del archivo -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK6PVB2axmI580KGIv+eVpTE6/nJHR5wi9e6V6tC2UmLon" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpH8KmZLl5+8z+qz0n0Hlt/zkt47f0DGOzK6kcg7pGhXq8CKQO1uyyJbj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

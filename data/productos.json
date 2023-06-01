@@ -1,0 +1,54 @@
+[
+  {
+    "id": "pid8052",
+    "title": "Producto Postman",
+    "description": "Este es un producto de Postman",
+    "code": "a1",
+    "price": 100,
+    "status": true,
+    "stock": 10,
+    "category": "Categoría Postman",
+    "thumbnails": "Sin imagen"
+  },
+  {
+    "id": "pid1b3e",
+    "title": "Titulo modificado",
+    "description": "Descripción modificada",
+    "code": "a2",
+    "price": 500,
+    "status": true,
+    "stock": 20,
+    "category": "Categoría Postman",
+    "thumbnails": [
+      "/ruta/de/image1.jpg",
+      "/ruta/de/image2.jpg",
+      "/ruta/de/image3.jpg"
+    ]
+  },
+  {
+    "id": "pid155a",
+    "title": "Producto Postman",
+    "description": "Este es un producto de Postman",
+    "code": "a3",
+    "price": 300,
+    "status": true,
+    "stock": 30,
+    "category": "Categoría Postman",
+    "thumbnails": [
+      "/ruta/de/image4.jpg",
+      "/ruta/de/image5.jpg",
+      "/ruta/de/image6.jpg"
+    ]
+  },
+  {
+    "id": "pid987d",
+    "title": "ee",
+    "description": "ee",
+    "code": "html1",
+    "price": "0.06",
+    "status": true,
+    "stock": "1",
+    "category": "Categoria html",
+    "thumbnails": "Sin imagen"
+  }
+]
