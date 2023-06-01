@@ -5,9 +5,22 @@
 const express = require('express');
 const fs = require('fs').promises;
 const { v4: uuidv4 } = require('uuid');
-const multerUploader = require('../utils'); // Importar el archivo utils.js
+const multer = require('multer');
 
 const router = express.Router();
+
+// Configuración de Multer para el almacenamiento de archivos
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, './public/img'); // Ruta donde se guardarán las imágenes
+  },
+  filename: (req, file, cb) => {
+    const uniquePrefix = Date.now() + '-' + Math.round(Math.random() * 1e9); // Genera un prefijo único con el timestamp
+    cb(null, uniquePrefix + '-' + file.originalname); // Nombre del archivo guardado
+  },
+});
+
+const upload = multer({ storage });
 
 // Ruta del archivo JSON para respaldar los productos
 const productosFilePath = './data/productos.json';
@@ -20,11 +33,11 @@ const productosFilePath = './data/productos.json';
 
     const productosData = await fs.readFile(productosFilePath, 'utf8');
     if (productosData.trim() === '') {
-      // Si el archivo está vacío,inicializar un array vacío
+      // Si el archivo está vacío, inicializar un array vacío
       await fs.writeFile(productosFilePath, '[]');
     }
   } catch (error) {
-    // Si el archivo no existe crearlo con un array vacío
+    // Si el archivo no existe, crearlo con un array vacío
     await fs.writeFile(productosFilePath, '[]');
   }
 })();
@@ -90,7 +103,7 @@ router.get('/:pid', async (req, res) => {
 // Agrega un nuevo producto (La propiedad "id" se autogenera)
 /* ************************************************************************** */
 
-router.post('/', multerUploader.single('image'), async (req, res) => {
+router.post('/', upload.single('image'), async (req, res) => {
   try {
     const { id, title, description, code, price, stock, category } = req.body;
     const image = req.file; // Obtener el archivo de imagen enviado
@@ -129,8 +142,8 @@ router.post('/', multerUploader.single('image'), async (req, res) => {
       status: true,
       stock,
       category,
-      // Asignar el nombre de archivo de la imagen si se proporciona
-      thumbnails: image ? image.filename : 'Sin imagen',
+      // Asignar la ruta del archivo de imagen si se proporciona
+      thumbnail: image ? '/img/' + image.filename : 'Sin imagen',
     };
 
     // Agregar el nuevo producto al array de productos
@@ -198,7 +211,7 @@ router.put('/:pid', async (req, res) => {
 /* ************************************************************************** */
 /* DELETE /:pid  */
 /* ************************************************************************** */
-// ELimina un producto con el id indicado.
+// Elimina un producto con el id indicado.
 /* ************************************************************************** */
 
 router.delete('/:pid', async (req, res) => {
